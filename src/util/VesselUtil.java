@@ -42,5 +42,8 @@ public class VesselUtil {
 
         return result;
     }
+    public List<Vessel> getAllVessels() {
+        return vesselList;
+    }
 
 }

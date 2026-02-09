@@ -35,10 +35,7 @@ public class UserInterface {
 
         Vessel found = vesselUtil.getVesselById(searchId);
         if (found != null) {
-            System.out.println(found.getVesselId() + " | " +
-                    found.getVesselName() + " | " +
-                    found.getVesselType() + " | " +
-                    found.getAverageSpeed() + " knots");
+            printVessel(found);
         } else {
             System.out.println("Vessel Id " + searchId + " not found");
         }
@@ -46,12 +43,18 @@ public class UserInterface {
         System.out.println("High performance vessels are");
         List<Vessel> highPerf = vesselUtil.getHighPerformanceVessels();
         for (Vessel vessel : highPerf) {
-            System.out.println(vessel.getVesselId() + " | " +
-                    vessel.getVesselName() + " | " +
-                    vessel.getVesselType() + " | " +
-                    vessel.getAverageSpeed() + " knots");
+            printVessel(vessel);
         }
 
         scanner.close();
+    }
+
+    private static void printVessel(Vessel vessel) {
+        System.out.println(
+                vessel.getVesselId() + " | " +
+                        vessel.getVesselName() + " | " +
+                        vessel.getVesselType() + " | " +
+                        vessel.getAverageSpeed() + " knots"
+        );
     }
 }
